@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> TV Shows </title>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
+    </head>
+
+    <body id="body">
+        <h1>Hello World! </h1>
+        <p id="tvshow">Faith's favorite tv shows are </p> 
+        <ol class="a" >
+         {%for i in range(0, len)%}
+             {% if  tvlist[i] in favorite %}
+             <li id="fav" class="b">{{tvlist[i]}}</li>
+             {%else%}
+                <li>{{tvlist[i]}} </li>
+             {%endif%}
+             <br>
+             <div align="right">
+                 <img  alt="images" src="{{url_for('static', filename = pictures[i])}} " >
+             </div>
+             <br>
+         {%endfor%}
+       
+      
+        </ol>
+    </body>  
+</html>
